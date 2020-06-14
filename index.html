@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebookbutton</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js">
+    </script>
+</head>
+<body>
+    <a href="https://www.facebook.com/magesh.sridhar">
+    <div id="toplayer"></div>
+    <button>Facebook</button>
+    <img src="Emoticons/Emoticons-01.png" alt="heart" id="heart">
+    <img src="Emoticons/Emoticons-02.png" alt="like" id="like">
+    <img src="Emoticons/Emoticons-03.png" alt="sad" id="sad">
+    <img src="Emoticons/Emoticons-04.png" alt="angry" id="angry">
+    <img src="Emoticons/Emoticons-05.png" alt="wow" id="wow">
+    <img src="Emoticons/Emoticons-06.png" alt="laugh" id="laugh">
+</a>
+</body>
+<script>
+    document.querySelector("#toplayer").addEventListener("mouseover",animate);
+    document.querySelector("#toplayer").addEventListener("mouseout",putback);
+    function animate()
+    {
+        gsap.to("#heart",{x:-100,y:-70,scale:3,opacity:1});
+        gsap.set("#heart",{css:{zIndex:2}});
+        gsap.to("#laugh",{y:-60,x:10,scale:2,opacity:1});
+        gsap.set("#laugh",{css:{zIndex:2}});
+        gsap.to("#like",{opacity:1,y:40,scale:1.5});
+        gsap.set("#like",{css:{zIndex:2}});
+        gsap.to("#wow",{opacity:1,y:30,x:-110,scale:2});
+        gsap.set("#wow",{css:{zIndex:2}});
+        gsap.to("#angry",{opacity:1,y:30,x:110,scale:2.5});
+        gsap.set("#angry",{css:{zIndex:2}});
+        gsap.to("#sad",{opacity:1,y:-60,x:100,scale:2.2});
+        gsap.set("#sad",{css:{zIndex:2}});
+    }
+    function putback()
+    {
+        gsap.to("#heart",{opacity:0,x:1,y:5,scale:0});
+        gsap.to("#laugh",{opacity:0,y:5,scale:0});
+        gsap.to("#like",{opacity:0,y:-3,scale:0});
+        gsap.to("#wow",{opacity:0,y:2,x:-3,scale:0});
+        gsap.to("#angry",{opacity:0,y:2,x:-3,scale:0});
+        gsap.to("#sad",{opacity:0,y:2,x:-3,scale:0});
+    }
+</script>
+</html>
